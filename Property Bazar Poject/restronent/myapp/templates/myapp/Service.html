@@ -1,0 +1,58 @@
+{% extends "myapp/common.html" %}
+{% load static %}
+{% block title %}Our Services - Property Bazar{% endblock %}
+
+{% block css %}
+{{ block.super }}
+ <link rel="stylesheet" href="{% static 'css/service.css'  %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="services-section text-center">
+  <div class="container">
+    <h2 class="section-title">Explore Our Services</h2>
+    <p class="section-subtitle">Premium property-related services tailored to make your journey simple, safe, and successful.</p>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card loan">
+          <i class="fas fa-hand-holding-usd service-icon text-primary"></i>
+          <div class="service-title">Loan Services</div>
+          <div class="service-text">Secure home loans easily with our partner banks and lowest EMI plans.</div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card legal">
+          <i class="fas fa-gavel service-icon text-success"></i>
+          <div class="service-title">Legal Services</div>
+          <div class="service-text">Get verified legal help for document checks, registration, and ownership transfer.</div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card insurance">
+          <i class="fas fa-shield-alt service-icon text-warning"></i>
+          <div class="service-title">Insurance</div>
+          <div class="service-text">Protect your property with top-rated insurance plans against any risk or damage.</div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card property">
+          <i class="fas fa-building service-icon text-danger"></i>
+          <div class="service-title">Property Services</div>
+          <div class="service-text">Buy, sell, or rent with ease through our trusted agents and smart tech platform.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="cta mt-5">
+      <button onclick="window.location.href='/contact/'">Get in Touch with Us</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+
+  .property-container {
+    display: flex;
+    width: 100%;
+    justify-content:center;
+    flex-wrap: nowrap;  /* Ensure the cards stay on one line */
+    overflow-x: auto;  /* Allow horizontal scrolling */
+    gap: 2rem; /* Gap between cards */
+  }
+
+  .property-card {
+    width: 350px;  /* Fixed width for each card */
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin:30px;
+  }
+
+  .property-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .property-card img {
+    height: 220px;
+    object-fit: cover;
+    transition: 0.3s ease;
+  }
+
+  .property-card:hover img {
+    filter: brightness(90%);
+  }
+
+  .card-body {
+    background-color: #f8fafc;
+    padding: 1rem;
+  }
+
+  .card-body ul {
+    padding-left: 1rem;
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+
+  .card-body li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+  }
+
+  .card-body button {
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-body button:hover {
+    background-color: #1d4ed8;
+  }
+
+  /* For the purchase page */
+  .purchase-page {
+    background-color: #e9f5ff; /* Light blue background */
+  }
+
+  /* For the sell page */
+  .sell-page {
+    background-color: #f0f4f8; /* Light gray background */
+  }
+
+  /* For smaller screens (tablet & mobile) */
+  @media (max-width: 1024px) {
+    .property-card {
+      width: 48%; /* 2 cards per row on medium screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .property-card {
+      width: 100%; /* 1 card per row on small screens */
+    }
+  }

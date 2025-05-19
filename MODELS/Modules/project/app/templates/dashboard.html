@@ -1,0 +1,23 @@
+{% extends "common.html" %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+email={{userdata.stu_email}}<br/>
+name={{userdata.stu_name}}<br/>
+discri={{userdata.stu_dis}}<br/>
+Contact={{userdata.stu_contact}}<br/>
+dob={{userdata.stu_dob}}<br/>
+qualification={{userdata.stu_quali}}<br/>
+gender={{userdata.stu_gender}}<br/>
+
+id={{userdata.id}}
+<div style="display: inline-block;">
+    <img src="{{userdata.stu_image.url}}" alt="" style="width: 150px; height: auto;">
+  </div>
+  
+<a style="color:red" href="{{userdata.stu_document.url}}" target="_blank" download>Download</a>
+<h1>dashbord</h1>
+{% endblock %}

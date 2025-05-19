@@ -1,0 +1,73 @@
+{% extends "myapp/common.html" %}
+{% load static %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+
+   
+
+<div class="form-wrapper">
+  <div class="form-header">Register</div>
+  <div class="msg">{{ msg }}</div>
+  <form action="{% url 'Ragister' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-content">
+      <!-- Left Column -->
+      <div class="form-column">
+        <label for="username">Name:</label>
+        <input type="text" name="username" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Contact:</label>
+        <input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" placeholder="Enter your phone number" required>
+
+        <label for="dob">DOB:</label>
+        <input type="date" name="dob" min="2007-01-01" required>
+
+        <label for="state">State:</label>
+        <select id="stateSelector" name="state" onchange="stateSelected()" required>
+          <option value="" disabled selected>Select your state</option>
+          <option value="UP">Uttar Pradesh</option>
+          <option value="MH">Maharashtra</option>
+          <option value="RJ">Rajasthan</option>
+          <option value="DL">Delhi</option>
+          <option value="PB">Punjab</option>
+        </select>
+      </div>
+
+      <!-- Right Column -->
+      <div class="form-column">
+        <label for="gender">Gender:</label>
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female" required> Female</label>
+        </div>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+
+        <label for="cpassword">Confirm Password:</label>
+        <input type="password" name="cpassword" required>
+
+        <!-- Extra field for symmetry or you can customize it -->
+        <label for="photo">Upload Profile Pic:</label>
+        <input type="file" name="profile_pic" accept="image/*">
+
+        <input type="submit" class="submit-btn" value="Submit">
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

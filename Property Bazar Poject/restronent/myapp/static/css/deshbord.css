@@ -1,0 +1,69 @@
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+  }
+  .card {
+    border: none;
+    border-radius: 16px;
+    transition: 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .nav-link {
+    font-weight: 500;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 8px;
+  }
+  .nav-link:hover, .nav-link.active {
+    background-color: #007bff;
+    color: #fff !important;
+  }
+  .form-control, input[type="text"], input[type="email"] {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  input[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .custom-table {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  .custom-table thead {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .custom-table th, .custom-table td {
+    padding: 12px;
+    vertical-align: middle;
+  }
+  .custom-table tbody tr:hover {
+    background-color: #f1f8ff;
+  }
+  .nav-links a {
+    margin-right: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #007bff;
+  }
+

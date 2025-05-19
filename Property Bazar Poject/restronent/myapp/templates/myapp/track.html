@@ -1,0 +1,69 @@
+{% extends "myapp/common.html" %}
+{% load static %}
+
+{% block title %}
+track
+{% endblock %}
+
+{% block css %}
+{{ block.super }}
+ <link rel="stylesheet" href="{% static 'css/track.css'  %}">
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="track-order-container">
+  <h2 class="track-title">Track Your Order</h2>
+  <p class="track-subtitle">Stay updated with your property purchase journey!</p>
+
+  <!-- Order Tracking Card -->
+  <div class="track-card">
+    <div class="track-header">
+      <span>Order ID: <strong>#{{ order.id }}</strong></span>
+      <span class="status">Status: <strong>{{ order.status }}</strong></span>
+    </div>
+
+    <!-- Left Column: Order Progress Tracker -->
+    <div class="order-progress">
+      <ul class="progress-bar">
+        <li class="step completed">
+          <div class="circle">1</div>
+          <p>Order Placed</p>
+        </li>
+        <li class="step completed">
+          <div class="circle">2</div>
+          <p>Shipped</p>
+        </li>
+        <li class="step completed">
+          <div class="circle">3</div>
+          <p>Out for Delivery</p>
+        </li>
+        <li class="step completed">
+          <div class="circle">4</div>
+          <p>Delivered</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right Column: Order Details Section -->
+    <div class="order-details">
+      <h3>Order Details</h3>
+      <ul>
+        <li><strong>Product Name:</strong> {{ userdata.emp_name }}</li>
+        <li><strong>Owner:</strong> {{ userdata.emp_name }}</li>
+        <li><strong>Location:</strong> {{ userdata.emp_state }}</li>
+        <li><strong>Expected Delivery:</strong> {{ userdata.emp_dob }}</li>
+        <li><strong>Tracking Number:</strong> {{ userdata.emp_contect }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contact for Help -->
+  <div class="contact-help">
+    <p>If you have any issues with your order, contact us at <strong>support@propertybazar.com</strong>.</p>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "myapp/common.html" %}
+
+{% load static %}
+{% block title %}
+login
+{% endblock %}
+{% block css %}
+{{ block.super }}
+ <link rel="stylesheet" href="{% static 'css/login.css'  %}">
+{% endblock %}
+{% block content %}
+
+
+<div class="login-container">
+  <div class="login-header">Login</div>
+  <div class="msg">{{ msg }}</div>
+  <div class="msg">{{ pmsg }}</div>
+  <form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" name="email" id="exampleInputEmail1" placeholder="Enter your email" required>
+
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" id="exampleInputPassword1" placeholder="Enter your password" required>
+
+    <button type="submit" class="btn-submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,88 @@
+body {
+        background-color: #e6f0fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .navbar {
+        background: linear-gradient(90deg, #1e3a8a,rgb(38, 120, 253));
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* slightly stronger shadow */
+        padding: 1rem 1.5rem;
+        transition: all 0.4s ease-in-out;
+        opacity: 1; /* 👈 ensures 100% opacity */
+      }
+      
+
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 1.9rem;
+        color: #e0f2fe;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover {
+        color: #facc15;
+        transform: scale(1.05);
+      }
+      .navbar-nav .nav-link {
+        color: #000000; /* changed from white to black */
+        font-weight: 600;
+        font-size: 1.05rem;
+        padding: 0.6rem 1.1rem;
+        margin: 0 0.3rem;
+        border-radius: 6px;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+
+      .navbar-nav .nav-link i {
+        font-size: 1.1rem;
+      }
+
+      .navbar-nav .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+        color: #fcd34d; /* hover color */
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
+      }
+      
+      .navbar-nav .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.3); /* 👈 was 0.2 */
+        color: #bae6fd;
+      }
+      
+      .auth-links .nav-link {
+        color: #fff;
+        font-weight: 600;
+        margin-left: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .auth-links .nav-link:hover {
+        color: #facc15;
+        transform: scale(1.05);
+      }
+
+      .navbar-toggler {
+        border: none;
+        outline: none;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      @media (max-width: 991.98px) {
+        .auth-links {
+          margin-top: 1rem;
+        }
+
+        .navbar-nav .nav-link {
+          padding: 0.8rem 1rem;
+        }
+      }

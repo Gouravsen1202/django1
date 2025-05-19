@@ -1,0 +1,39 @@
+(env) PS C:\Users\shubhi rai\Desktop\models_relations\project> py manage.py shell
+12 objects imported automatically (use -v 2 for details).
+
+Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from app.models import Shubhi12345
+>>> from app.models import Shubhi12345 as sh
+>>> data = sh.objects.all()
+>>> data
+<QuerySet []>
+>>> sh.objects.create(stu_name="Neeraj")
+<Shubhi12345: Shubhi12345 object (1)>
+>>> sh.objects.create(stu_name="Rahul")
+<Shubhi12345: Shubhi12345 object (2)>
+>>> sh.objects.create(stu_name="Shubhi")
+<Shubhi12345: Shubhi12345 object (3)>
+>>> data = sh.objects.all()
+>>> data
+<QuerySet [<Shubhi12345: Shubhi12345 object (1)>, <Shubhi12345: Shubhi12345 object (2)>, <Shubhi12345: Shubhi12345 object (3)>]>
+>>> data.values()
+<QuerySet [{'id': 1, 'stu_name': 'Neeraj'}, {'id': 2, 'stu_name': 'Rahul'}, {'id': 3, 'stu_name': 'Shubhi'}]>
+>>> data.values_list() 
+<QuerySet [(1, 'Neeraj'), (2, 'Rahul'), (3, 'Shubhi')]>
+>>> data = sh.objects.get(id=1)
+>>> data
+<Shubhi12345: Shubhi12345 object (1)>
+>>> data.delete()
+(1, {'app.Shubhi12345': 1})
+>>> data = sh.objects.get(id=2) 
+>>> data.stu_name
+'Rahul'
+>>> data.stu_name="Neeraj"
+>>> data.save()
+>>> data = sh.objects.get(id=2) 
+>>> data.stu_name
+'Neeraj'
+>>> data.stu_name = "Rahul"
+>>> data.save()
