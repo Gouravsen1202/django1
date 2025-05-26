@@ -1,0 +1,62 @@
+{% if cart %}
+  {% for i in cart %}
+    <div class="card" style="width: 18rem; margin-bottom: 1rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ i.item_name }}</h5>
+        <p class="card-text">{{ i.item_des }}</p>
+        <h5 class="card-title">Price: {{ i.item_price }}</h5>
+        <h5 class="card-title">Quantity: {{ i.item_quantity }}</h5>
+        <div class="card-body">
+          <a href="#" class="card-link">Buy Now</a>
+          <a href="{% url 'delete_from_cart' i.id %}" class="card-link text-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  <h1>Total amount: {{ total_amt }}</h1>
+  <a href="#" class="btn btn-primary">Buy Now</a>
+
+{% else %}
+
+  {% if not show_cart_only %}
+    <a href="{% url 'showcards' %}">Show Cart</a>
+
+    <form action="{% url 'home1' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="Item_name">Item name:</label>
+      <input type="text" name="Item_name" placeholder="Enter your Item name"><br>
+
+      <label for="Description">Description:</label>
+      <input type="text" name="Description" placeholder="Enter Description"><br>
+
+      <label for="Price">Price:</label>
+      <input type="number" name="Price" placeholder="Enter Price"><br>
+
+      <label for="Quantity">Quantity:</label>
+      <input type="number" name="Quantity" placeholder="Enter Quantity"><br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    {{ msg }}
+
+    {% if data %}
+      {% for i in data %}
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ i.item_name }}</h5>
+            <p class="card-text">{{ i.item_des }}</p>
+            <h5 class="card-title">Price: {{ i.item_price }}</h5>
+            <h5 class="card-title">Quantity: {{ i.item_quantity }}</h5>
+            <div class="card-body">
+              <a href="#" class="card-link">Buy Now</a>
+              <a href="{% url 'addcard' pk=i.id %}" class="card-link">Add To Cart</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+
+{% endif %}

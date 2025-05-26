@@ -26,7 +26,7 @@ def ragister(request):
     if request.method=='POST':
         print(request.method)
         print(request.POST)
-           
+        
         name = request.POST.get('username')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
@@ -131,6 +131,7 @@ def dashboard(request, pk):
 
 
 # for query section ...........
+#CREATE
 def query(request,pk):
     print(pk)
     userdata=Bazzar.objects.get(id=pk)
@@ -148,13 +149,13 @@ def query(request,pk):
         return render(request,'myapp/deshbord.html',{'userdata':userdata,'querydetails':querydetails,'query':userdata})
     else:
         return render(request,'myapp/deshbord.html',{'userdata':userdata,'query':userdata})
-    
+  #READ  
 def allquery(request,pk):
     userdata=Bazzar.objects.get(id=pk)
     x=userdata.emp_email
     querydetails=Querys.objects.filter(stu_email=x)
     return render(request,'myapp/deshbord.html',{'userdata':userdata,'querydetails':querydetails})
-
+#EDIT
 def edit(request, pk):
     editdata = Querys.objects.get(id=pk)
     userdata = Bazzar.objects.get(emp_email=editdata.stu_email)
@@ -183,7 +184,7 @@ def qupdate(request, pk):
         userdata=Bazzar.objects.get(emp_email=email)
         return render(request,'myapp/deshbord.html',{'userdata':userdata,'querydetails':querydetails})
 
-
+#DELETE
 def delete(request,pk):
     deletedata=Querys.objects.get(id=pk)
     email=deletedata.stu_email

@@ -1,0 +1,47 @@
+{% block title %}
+from
+{% endblock %}
+
+{% block content %}
+  <title>CRUD Form Practice</title>
+  <style>
+    form {
+      width: 300px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Contact Form</h2>
+
+  <form action="{% url 'form' %}" method="POST" action="/submit/">
+    {% csrf_token %}
+    <!-- ID field for update/delete (can be hidden) -->
+    <input type="hidden" name="id" value="{{ record.id|default:'' }}">
+
+    <label for="name">Name:</label>
+    <input type="text" name="username" value="{{ record.name|default:'' }}" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" value="{{ record.email|default:'' }}" id="email" required>
+
+    <label for="message">Message:</label>
+    <textarea name="message" value="{{ record.message|default:'' }}" id="message" rows="4" required></textarea>
+
+    <button type="submit">Save</button>
+    <button type="submit" formaction="/update/">Update</button>
+    <button type="submit" formaction="/delete/" onclick="return confirm('Are you sure?')">Delete</button>
+  </form>
+
+</body>
+</html>
+{% endblock  %}

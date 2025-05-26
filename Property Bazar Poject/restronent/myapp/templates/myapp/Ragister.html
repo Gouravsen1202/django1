@@ -34,7 +34,7 @@ Register
         <input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" placeholder="Enter your phone number" required>
 
         <label for="dob">DOB:</label>
-        <input type="date" name="dob" min="2007-01-01" required>
+        <input type="date" name="dob" min="1900-01-01" max="{{ max_dob }}" required>
 
         <label for="state">State:</label>
         <select id="stateSelector" name="state" onchange="stateSelected()" required>
